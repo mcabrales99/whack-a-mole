@@ -38,17 +38,18 @@
     float: left;
     background-image: url("/wack3.jpg");
     opacity: 0;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 h1  {
 
-    margin-left: 300px;
+    margin-left: 500px;
+
 }
 body   {
 
     background-image: url("/Silbury_Hill_03.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -140,7 +141,7 @@ function timeOut()  {
 
 }
 //This section keeps the score by having the function addscore check if the 
-//square that is displaying has an active class. If it does then a pont is incremented. Else nothing is added. 
+//square that is displaying has an active class. If it does then a point is incremented. Else the player is penalized with the subtraction of a point per click.
 
 $(".inBox").click(addscore);
 
@@ -152,7 +153,10 @@ function addscore() {
 
         score = score+1;
         $("#score").html(score);
-    }  
+    }else   {
+        score = score-1;
+        $("#score").html(score);
+    }
 };
 
 </script>
